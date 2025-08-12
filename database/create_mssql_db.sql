@@ -34,3 +34,13 @@ CREATE TABLE guestbook (
 
 -- Insert data into 'guestbook' table
 INSERT INTO guestbook (comment, name) VALUES ('This is a test comment.', 'test');
+
+-- Create a new user 'dvwa' with password '1234'
+CREATE USER 'dvwa'@'localhost' IDENTIFIED BY '1234';
+
+-- Grant necessary privileges to 'dvwa' on the 'dvwa' database
+GRANT ALL PRIVILEGES ON dvwa.* TO 'dvwa'@'localhost';
+
+-- Apply the changes (flush privileges)
+FLUSH PRIVILEGES;
+
